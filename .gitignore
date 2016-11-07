@@ -1,6 +1,7 @@
 #Custom
 .vscode
 yarn.lock
+dist/
 
 
 # Logs

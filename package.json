@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "dev": "gulp4",
     "test": "test"
   },
   "repository": {
@@ -26,9 +27,12 @@
   },
   "homepage": "https://github.com/hstarorg/node-mvc#readme",
   "devDependencies": {
+    "@types/node": "^6.0.46",
     "chai": "^3.5.0",
+    "gulp-typescript": "^3.1.2",
     "gulp4": "^4.0.1",
     "mocha": "^3.1.2",
+    "node-notifier": "^4.6.1",
     "typescript": "^2.0.7"
   }
 }
