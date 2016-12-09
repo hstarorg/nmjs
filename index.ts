@@ -1,2 +1,4 @@
-import { createApplication } from './lib/application';
-export default createApplication;  
+import { MvcApp } from './lib/application';
+export default function(){
+  return new MvcApp();
+};  

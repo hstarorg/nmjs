@@ -1,6 +1,7 @@
 const gulp = require('gulp4');
 const ts = require('gulp-typescript');
 const notifier = require('node-notifier');
+const devServer = require('gulp-develop-server');
 
 const tsProject = ts.createProject('tsconfig.json');
 
@@ -15,20 +16,30 @@ const notify = (msg, opt) => {
   console.log(msg);
 };
 
-gulp.task('compileTs', done => {
-  tsProject.src()
+gulp.task('compileTs', () => {
+  return tsProject.src()
     .pipe(tsProject())
-    .js.pipe(gulp.dest('dist'));
-  notify('Compile successfully.');
+    .js.pipe(gulp.dest('dist'))
+    .on('end', () => {
+      notify('Compile successfully.');
+    });
+});
+
+gulp.task('serve', done => {
+  devServer.listen({ path: './dist/samples/index.js' });
   done();
 });
 
 gulp.task('watch', done => {
   gulp.watch([
     './index.ts',
-    './lib/**/*.ts'
-  ], gulp.series('compileTs'));
+    './lib/**/*.ts',
+    './samples/**/*.ts'
+  ], gulp.series('compileTs', devServer.restart));
   done();
 });
 
-gulp.task('default', gulp.series('compileTs', 'watch'));
+gulp.task('default', gulp.series(
+  'compileTs',
+  gulp.parallel('serve', 'watch')
+));
