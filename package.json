@@ -1,7 +1,7 @@
 {
-  "name": "node-mvc",
+  "name": "nmjs",
   "version": "0.0.1",
-  "description": "A mvc framework like the asp.net mvc framework, that used typescript language.",
+  "description": "A micro mvc framework like the asp.net mvc, based node and typescript. ",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hstarorg/node-mvc.git"
+    "url": "git+https://github.com/hstarorg/nmjs.git"
   },
   "keywords": [
     "Node",
@@ -23,9 +23,9 @@
   "author": "Jay.M.Hu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hstarorg/node-mvc/issues"
+    "url": "https://github.com/hstarorg/nmjs/issues"
   },
-  "homepage": "https://github.com/hstarorg/node-mvc#readme",
+  "homepage": "https://github.com/hstarorg/nmjs#readme",
   "devDependencies": {
     "@types/node": "0.0.2",
     "chai": "^3.5.0",
