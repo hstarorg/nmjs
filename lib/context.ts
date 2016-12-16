@@ -1,17 +1,13 @@
-import { MvcApp } from './application';
+import http = require('http');
+import { NmApp } from './application';
 import { Request } from './request';
 import { Response } from './response';
 
 export class Context {
-
-  public app: MvcApp;
-  public request: Request;
-  public response: Response;
-  public originalUrl: string;
-  public state: any;
-  public accept: any;
-  public cookies: any;
-
-  constructor() {
-  }
+	public request: Request;
+	public response: Response;
+	constructor(req: http.IncomingMessage, res: http.ServerResponse, public app: NmApp) {
+		this.request = new Request(req);
+		this.response = new Response(res);
+	}
 }

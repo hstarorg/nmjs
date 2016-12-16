@@ -26,7 +26,7 @@ gulp.task('compileTs', () => {
 });
 
 gulp.task('serve', done => {
-  devServer.listen({ path: './dist/samples/index.js' });
+  devServer.listen({ path: './dist/examples/index.js' });
   done();
 });
 
@@ -34,7 +34,7 @@ gulp.task('watch', done => {
   gulp.watch([
     './index.ts',
     './lib/**/*.ts',
-    './samples/**/*.ts'
+    './examples/**/*.ts'
   ], gulp.series('compileTs', devServer.restart));
   done();
 });

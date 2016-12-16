@@ -1,4 +1,3 @@
-import { MvcApp } from './lib/application';
-export default function(){
-  return new MvcApp();
-};  
+import { NmApp } from './lib/application';
+
+export default NmApp;
