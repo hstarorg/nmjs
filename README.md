@@ -1,4 +1,4 @@
-# node-mvc
+# nmjs
 A mvc framework like the asp.net mvc framework, that used typescript language.
 
 # How to use?
@@ -29,6 +29,9 @@ npm i
 
 # 启动
 npm run dev
+
+# 访问站点
+http://localhost:3333
 ```
 # 编码规范
 

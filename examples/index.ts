@@ -7,6 +7,8 @@ app.use((req, res, next) => {
 
 });
 
+const router = new NmApp.Router();
+
 const server = http.createServer(app.init());
 server.listen(3333, err => {
 	if (err) {

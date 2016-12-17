@@ -3,11 +3,14 @@ import EventEmitter = require('events');
 import { Context } from './context';
 import { Request } from './request';
 import { Response } from './response';
+import { Router } from './router';
 
 export class NmApp extends EventEmitter.EventEmitter {
 
 	private middleware: Array<Function> = [];
 	private env = process.env.NODE_ENV || 'development';
+
+	static Router = Router;
 
 	constructor() {
 		super();
@@ -16,15 +19,16 @@ export class NmApp extends EventEmitter.EventEmitter {
 	init(): Function {
 		return (req, res) => {
 			let context = new Context(req, res, this);
-			console.log(this);
+			this.handlerRequest(context);
 		}
 	}
 
-	init2(req, res) {
-
+	handlerRequest(context: Context) {
+		context.response.send('Test');
 	}
 
 	use(fn: Function) {
 		this.middleware.push(fn);
+		return this;
 	}
 }
