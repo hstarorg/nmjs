@@ -1,9 +1,10 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "declaration": false,
-    // "declarationDir": "declaration",
-    "outDir": "dist",
-    "target": "es6"
-  }
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": false,
+		// "declarationDir": "declaration",
+		"outDir": "dist",
+		"experimentalDecorators": true,
+		"target": "es6"
+	}
 }
