@@ -1,10 +1,19 @@
-import { Route, RoutePrefix, HttpMethods } from './../../index';
+import { Route, RoutePrefix, HttpMethods, Controller } from './../../index';
 
-@RoutePrefix('api/v1')
-export class HomeController {
+@RoutePrefix('/home')
+export default class HomeController extends Controller {
 
-	@Route('/', HttpMethods.GET)
-	getIndex(): any {
-		return 'OK';
-	}
+  private getValue() {
+    return Promise.resolve('Ok');
+  }
+
+  @Route('/test', HttpMethods.GET)
+  async getIndex(req, res): Promise<any> {
+    let v = await this.getValue();
+    res.send(v);
+  }
+  @Route('/good', HttpMethods.GET)
+  postIndex(req, res, next) {
+    res.send('Good');
+  }
 }

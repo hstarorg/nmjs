@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
-		"declaration": false,
-		// "declarationDir": "declaration",
+		"declaration": true,
+		"declarationDir": "types",
 		"outDir": "dist",
 		"experimentalDecorators": true,
 		"target": "es6"

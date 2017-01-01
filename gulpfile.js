@@ -13,7 +13,10 @@ const notify = (msg, opt) => {
     wait: false,
     timeout: 2
   });
-  console.log(msg);
+};
+
+const errHander = err => {
+  err && console.error(err);
 };
 
 gulp.task('compileTs', () => {
@@ -26,7 +29,12 @@ gulp.task('compileTs', () => {
 });
 
 gulp.task('serve', done => {
-  devServer.listen({ path: './dist/examples/index.js' });
+  devServer.listen({ path: 'index.js', cwd: './dist/examples' }, errHander);
+  done();
+});
+
+gulp.task('restart', done => {
+  devServer.restart(errHander);
   done();
 });
 
@@ -35,7 +43,7 @@ gulp.task('watch', done => {
     './index.ts',
     './lib/**/*.ts',
     './examples/**/*.ts'
-  ], gulp.series('compileTs', devServer.restart));
+  ], gulp.series('compileTs', 'restart'));
   done();
 });
 

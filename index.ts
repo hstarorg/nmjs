@@ -1,7 +1,12 @@
-import { NmApp } from './lib/application';
+import app from './lib/index';
+import { Route, RoutePrefix } from './lib/decorators';
+import { HttpMethods } from './lib/enum';
+import { Controller } from './lib/interface/Controller';
 
-export default NmApp;
-
-export * from './lib/enum';
-
-export * from './lib/decorators';
+export {
+  app,
+  Route,
+  RoutePrefix,
+  HttpMethods,
+  Controller
+};
