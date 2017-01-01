@@ -1,9 +1,10 @@
+require('shelljs/global');
 const gulp = require('gulp4');
 const ts = require('gulp-typescript');
 const notifier = require('node-notifier');
 const devServer = require('gulp-develop-server');
 
-const tsProject = ts.createProject('tsconfig.json');
+const tsProject = ts.createProject('tsconfig.json', { declaration: true });
 
 const notify = (msg, opt) => {
   notifier.notify({
@@ -18,6 +19,11 @@ const notify = (msg, opt) => {
 const errHander = err => {
   err && console.error(err);
 };
+
+gulp.task('clean', done => {
+  rm('-rf', 'dist');
+  done();
+});
 
 gulp.task('compileTs', () => {
   return tsProject.src()
@@ -43,11 +49,12 @@ gulp.task('watch', done => {
     './index.ts',
     './lib/**/*.ts',
     './examples/**/*.ts'
-  ], gulp.series('compileTs', 'restart'));
+  ], gulp.series('clean', 'compileTs', 'restart'));
   done();
 });
 
 gulp.task('default', gulp.series(
+  'clean',
   'compileTs',
   gulp.parallel('serve', 'watch')
 ));

@@ -6,5 +6,9 @@
 		"outDir": "dist",
 		"experimentalDecorators": true,
 		"target": "es6"
-	}
+	},
+  "exclude": [
+    "./examples",
+    "./node_modules"
+  ]
 }
