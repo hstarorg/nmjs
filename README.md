@@ -10,14 +10,14 @@ A mvc framework like the asp.net mvc framework, that used typescript language.
 # Target/Plan
 
 - [x] 实现可启动Web应用程序
-- [ ] controller/action收集
-- [ ] 提供常用响应方法（类Express）
-- [ ] 路由自动注册
-- [ ] 命名路由（通过装饰器）
-- [ ] 请求参数解析
+- [x] controller/action收集
+- [x] 提供常用响应方法（类Express）
+- [x] 路由自动注册
+- [x] 命名路由（通过装饰器）
+- [x] 请求参数解析
 - [ ] 支持文件解析（文件上传）
 - [ ] 支持跨域请求（CORS，JSONP）
-- [ ] 中间件（兼容express中间件）
+- [x] 中间件（兼容express中间件）
 - [ ] 模板引擎（易用，高性能）
 - [ ] 命令行支持（运行构建，开发，生成部署包，初始化等）
 
@@ -25,7 +25,7 @@ A mvc framework like the asp.net mvc framework, that used typescript language.
 
 ```bash
 # 安装依赖
-npm i 
+npm i
 
 # 启动
 npm run dev
