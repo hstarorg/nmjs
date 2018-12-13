@@ -8,19 +8,13 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "gulp4",
+    "dev": "gulp",
     "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hstarorg/nmjs.git"
   },
-  "keywords": [
-    "Node",
-    "Web",
-    "Framework",
-    "MVC"
-  ],
   "author": "Jay.M.Hu",
   "license": "MIT",
   "bugs": {
@@ -31,8 +25,9 @@
     "@types/node": "0.0.2",
     "chai": "^3.5.0",
     "gulp-develop-server": "^0.5.2",
-    "gulp-typescript": "^3.1.3",
-    "gulp4": "^4.0.1",
+    "gulp-typescript": "^5.0.0",
+    "gulp": "^4.0.0",
+    "lerna": "^3.6.0",
     "mocha": "^3.1.2",
     "node-notifier": "^4.6.1",
     "shelljs": "^0.7.5"

@@ -1,5 +1,5 @@
 const http = require('http');
-import { app } from './../index';
+import { app } from './nmjs';
 
 app.use((req, res, next) => {
   next();

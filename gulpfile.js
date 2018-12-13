@@ -1,10 +1,10 @@
 require('shelljs/global');
-const gulp = require('gulp4');
+const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const notifier = require('node-notifier');
 const devServer = require('gulp-develop-server');
 
-const tsProject = ts.createProject('tsconfig.json', { declaration: true });
+const tsProject = ts.createProject('./tsconfig.json', { declaration: true });
 
 const notify = (msg, opt) => {
   notifier.notify({
@@ -26,7 +26,8 @@ gulp.task('clean', done => {
 });
 
 gulp.task('compileTs', () => {
-  return tsProject.src()
+  return gulp
+    .src(['/.examples/**/*.ts','./packages/nmjs/**/*.ts'])
     .pipe(tsProject())
     .js.pipe(gulp.dest('dist'))
     .on('end', () => {
@@ -45,16 +46,8 @@ gulp.task('restart', done => {
 });
 
 gulp.task('watch', done => {
-  gulp.watch([
-    './index.ts',
-    './lib/**/*.ts',
-    './examples/**/*.ts'
-  ], gulp.series('clean', 'compileTs', 'restart'));
+  gulp.watch(['./examples/**/*.ts'], gulp.series('clean', 'compileTs', 'restart'));
   done();
 });
 
-gulp.task('default', gulp.series(
-  'clean',
-  'compileTs',
-  gulp.parallel('serve', 'watch')
-));
+gulp.task('default', gulp.series('clean', 'compileTs', gulp.parallel('serve', 'watch')));

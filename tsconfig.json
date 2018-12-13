@@ -1,13 +1,13 @@
 {
-	"compilerOptions": {
-		"module": "commonjs",
-		"declaration": true,
-		"declarationDir": "types",
-		"outDir": "dist",
-		"experimentalDecorators": true,
-		"target": "es6"
-	},
-  "exclude": [
-    "./node_modules"
-  ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "declarationDir": "types",
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "experimentalDecorators": true,
+    "target": "es6"
+  },
+  "exclude": ["./node_modules"]
 }

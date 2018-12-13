@@ -1,14 +1,13 @@
-import { Route, RoutePrefix, HttpMethods, Controller } from './../../index';
+import { Route, RoutePrefix, HttpMethods, Controller } from '../nmjs';
 
 @RoutePrefix('/home')
 export default class HomeController extends Controller {
-
   private getValue() {
     return Promise.resolve('Ok');
   }
 
   @Route('/test', HttpMethods.GET)
-  async getIndex(req, res): Promise<any> {
+  async getIndex(req: any, res: any): Promise<any> {
     let v = await this.getValue();
     res.send(v);
   }

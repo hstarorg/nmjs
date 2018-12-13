@@ -4,7 +4,6 @@ import { Controller } from './../interface/Controller';
 import { HttpMethods } from './../enum';
 
 export const util = {
-
   getActionMethod(method: HttpMethods): string {
     let fnName;
     switch (method) {
@@ -45,7 +44,7 @@ export const util = {
     return routePrefix;
   },
 
-  registerRouter(app, ControllerClass) {
+  registerRouter(app: any, ControllerClass: any) {
     if (!(ControllerClass.prototype instanceof Controller)) {
       console.warn(`controller ${ControllerClass.name} is not extends Controller`);
       return;
