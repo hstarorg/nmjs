@@ -12,7 +12,7 @@ export default class HomeController extends Controller {
     res.send(v);
   }
   @Route('/good', HttpMethods.GET)
-  postIndex(req, res, next) {
+  postIndex(req: any, res: any, next: Function) {
     res.send('Good');
   }
 }

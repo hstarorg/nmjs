@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 const express = require('express');
 const app = express();
 
@@ -7,7 +7,7 @@ import { util } from './util';
 
 app.loadRoutes = () => {
   let controllerFolder = path.join(process.cwd(), 'controllers');
-  fs.readdirSync(controllerFolder).forEach(f => {
+  fs.readdirSync(controllerFolder).forEach((f: string) => {
     let filePath = path.join(controllerFolder, f);
     let stat = fs.statSync(filePath);
     if (!stat.isFile() || path.extname(filePath) !== '.js') {
@@ -22,7 +22,7 @@ app.loadRoutes = () => {
   });
 };
 
-process.on('uncaughtException', err => {
+process.on('uncaughtException', (err: Error) => {
   console.error(err);
 });
 

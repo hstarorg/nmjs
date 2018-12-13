@@ -1,14 +1,14 @@
 const http = require('http');
 import { app } from './nmjs';
 
-app.use((req, res, next) => {
+app.use((req: any, res: any, next: Function) => {
   next();
 });
 
 app.loadRoutes();
 
 const server = http.createServer(app);
-server.listen(3333, err => {
+server.listen(3333, (err: Error) => {
   if (err) {
     return console.error(err);
   }

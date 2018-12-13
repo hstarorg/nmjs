@@ -1,5 +1,5 @@
 export const RoutePrefix = (path: string) => {
-  return target => {
+  return (target: Function) => {
     target.prototype.$$routePrefix = path;
-  }
+  };
 };

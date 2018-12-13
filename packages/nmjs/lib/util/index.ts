@@ -25,18 +25,18 @@ export const util = {
     return fnName;
   },
 
-  buildRouter(ctrlClass) {
+  buildRouter(ctrlClass: Function) {
     const router = new Router();
     const ctrlClassProto = ctrlClass.prototype;
     const propertyNames = Object.getOwnPropertyNames(ctrlClassProto);
     const routes = ctrlClass.prototype.$$routes || [];
-    routes.forEach(route => {
+    routes.forEach((route: any) => {
       router[this.getActionMethod(route.method)](route.path, ctrlClassProto[route.actionName].bind(ctrlClassProto));
     });
     return router;
   },
 
-  getControllerPrefix(ctrlClass): string {
+  getControllerPrefix(ctrlClass: Function): string {
     let routePrefix = ctrlClass.prototype.$$routePrefix;
     if (routePrefix === undefined) {
       routePrefix = '/' + ctrlClass.name.replace(/Controller$/g, '').toLowerCase();
