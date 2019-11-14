@@ -5,13 +5,21 @@
   "author": "Hstarorg <hm910705@163.com>",
   "homepage": "https://github.com/hstarorg/nmjs/tree/master/packages/nmjs#readme",
   "license": "MIT",
-  "main": "lib/nmjs.js",
-  "keywords": ["Node", "Web", "Framework", "MVC"],
+  "main": "lib/index.js",
+  "types": "",
+  "keywords": [
+    "Node",
+    "Web",
+    "Framework",
+    "MVC"
+  ],
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
   },
@@ -20,12 +28,23 @@
     "url": "git+https://github.com/hstarorg/nmjs.git"
   },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/hstarorg/nmjs/issues"
   },
   "devDependencies": {
+    "@types/koa-router": "^7.0.42",
+    "@types/koa__cors": "^2.2.3",
     "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-helmet": "^5.2.0",
+    "koa-router": "^7.4.0",
+    "reflect-metadata": "^0.1.13"
   }
 }

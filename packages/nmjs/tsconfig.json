@@ -3,7 +3,7 @@
     "module": "commonjs",
     "declaration": true,
     "declarationDir": "types",
-    "outDir": "dist",
+    "outDir": "lib",
     "noImplicitAny": true,
     "noEmitOnError": true,
     "experimentalDecorators": true,
