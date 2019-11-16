@@ -8,21 +8,21 @@ module.exports = {
       files: ['*.json', '.eslintrc', '.tslintrc', '.prettierrc', '.tern-project'],
       options: {
         parser: 'json',
-        tabWidth: 2
-      }
+        tabWidth: 2,
+      },
     },
     {
       files: '*.{css,sass,scss,less,styl}',
       options: {
         parser: 'css',
-        tabWidth: 2
-      }
+        tabWidth: 2,
+      },
     },
     {
       files: '*.ts',
       options: {
-        parser: 'typescript'
-      }
-    }
-  ]
+        parser: 'typescript',
+      },
+    },
+  ],
 };

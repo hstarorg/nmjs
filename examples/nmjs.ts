@@ -1,1 +1,1 @@
-export * from '../packages/nmjs'
+export * from '../packages/nmjs/src'

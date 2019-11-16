@@ -1,14 +1,10 @@
 {
   "name": "nmjs",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A micro mvc framework like the asp.net mvc, based node and typescript. ",
-  "main": "index.js",
-  "types": "types/index.d.ts",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "dev": "gulp",
+    "start": "npm run demo",
+    "demo": "nodemon examples/index.ts",
     "test": "test"
   },
   "repository": {
@@ -22,20 +18,9 @@
   },
   "homepage": "https://github.com/hstarorg/nmjs#readme",
   "devDependencies": {
-    "@types/node": "0.0.2",
-    "chai": "^3.5.0",
-    "gulp-develop-server": "^0.5.2",
-    "gulp-typescript": "^5.0.0",
-    "gulp": "^4.0.0",
-    "lerna": "^3.6.0",
-    "mocha": "^3.1.2",
-    "node-notifier": "^4.6.1",
-    "shelljs": "^0.7.5"
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
   },
-  "dependencies": {
-    "@types/node": "^6.0.55",
-    "express": "^4.14.0",
-    "mocha": "^3.2.0",
-    "typescript": "^2.1.4"
-  }
+  "dependencies": {}
 }

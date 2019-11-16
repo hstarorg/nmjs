@@ -1,17 +1,28 @@
-const http = require('http');
-import { app } from './nmjs';
+import * as http from 'http';
+import { NmApp } from './nmjs';
 
-app.use((req: any, res: any, next: Function) => {
-  next();
-});
+import { FaqController } from './controllers/FaqController';
 
-app.loadRoutes();
+const app = new NmApp({});
 
-const server = http.createServer(app);
-server.listen(3333, (err: Error) => {
-  if (err) {
-    return console.error(err);
-  }
-  let addr = server.address();
-  console.log(`Server started, address: ${addr.address}, port: ${addr.port}`);
-});
+app.registerController(FaqController);
+
+const server = app
+  .listen(3333, () => {
+    const addr = server.address();
+    console.log(`Server started, listening`, addr);
+  })
+  .on('error', err => {
+    console.error(err);
+  });
+
+const app2 = new NmApp();
+const server2 = http.createServer(app2.callback());
+server2
+  .listen(3334, () => {
+    const addr = server2.address();
+    console.log(`Server started, listening`, addr);
+  })
+  .on('error', err => {
+    console.error(err);
+  });
