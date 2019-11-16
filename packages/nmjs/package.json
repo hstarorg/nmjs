@@ -1,6 +1,6 @@
 {
   "name": "nmjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A mvc framework like the asp.net mvc framework, that used typescript language.",
   "author": "Hstarorg <hm910705@163.com>",
   "homepage": "https://github.com/hstarorg/nmjs/tree/master/packages/nmjs#readme",
