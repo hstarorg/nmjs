@@ -1,5 +1,2 @@
 __test__/
-lib/
-dist/
-lib/
-types/
+src/
