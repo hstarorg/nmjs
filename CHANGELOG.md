@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## nmjs:0.1.1 (2019-11-17)
+
+- NPM 包中增加类型定义文件
+
 ## nmjs:0.1.0 (2019-11-17)
 
 - 使用 `koa` 作为底层框架
